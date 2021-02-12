@@ -1,10 +1,10 @@
 package com.techmave.agfarm.view.activity;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.os.Bundle;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter;
@@ -15,7 +15,7 @@ import com.techmave.agfarm.view.fragment.HomeFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DashboardActivity extends AppCompatActivity implements AHBottomNavigation.OnNavigationPositionListener {
+public class DashboardActivity extends AppCompatActivity implements AHBottomNavigation.OnTabSelectedListener {
 
     private ActivityDashboardBinding binding;
 
@@ -45,7 +45,9 @@ public class DashboardActivity extends AppCompatActivity implements AHBottomNavi
         fragments.add(HomeFragment.getInstance());
         fragments.add(HomeFragment.getInstance());
 
-        binding.bottomNavigation.setOnNavigationPositionListener(this);
+        binding.bottomNavigation.setOnTabSelectedListener(this);
+        binding.bottomNavigation.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
+        switchFragment(0);
     }
 
     private Fragment getFragment(int position) {
@@ -63,8 +65,9 @@ public class DashboardActivity extends AppCompatActivity implements AHBottomNavi
     }
 
     @Override
-    public void onPositionChange(int y) {
+    public boolean onTabSelected(int position, boolean wasSelected) {
 
-        switchFragment(y);
+        switchFragment(position);
+        return true;
     }
 }
