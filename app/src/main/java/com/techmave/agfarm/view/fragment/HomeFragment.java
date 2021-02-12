@@ -1,6 +1,9 @@
 package com.techmave.agfarm.view.fragment;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,12 +11,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.techmave.agfarm.databinding.FragmentHomeBinding;
+import com.techmave.agfarm.R;
 import com.techmave.agfarm.adapter.GridAdapter;
+import com.techmave.agfarm.databinding.FragmentHomeBinding;
 import com.techmave.agfarm.model.CardItem;
 
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class HomeFragment extends Fragment {
         adapter = new GridAdapter();
         List<CardItem> items = new ArrayList<>();
 
-        items.add(new CardItem("ফসলের বিবরণ", 1));
+        items.add(new CardItem("ফসলের বিবরণ", R.drawable.ic_calculator));
         items.add(new CardItem("কি ফসল চাষ করবেন", 1));
         items.add(new CardItem("সার ও বীজের হিসাব", 1));
         items.add(new CardItem("লাভ ক্ষতির হিসাব", 1));

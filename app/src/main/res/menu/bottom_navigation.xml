@@ -7,7 +7,7 @@
 
     <item android:id="@+id/action_weather"
         android:title="@string/weather"
-        android:icon="@drawable/ic_home"/>
+        android:icon="@drawable/ic_calculator"/>
 
     <item android:id="@+id/action_profile"
         android:title="@string/profile"
