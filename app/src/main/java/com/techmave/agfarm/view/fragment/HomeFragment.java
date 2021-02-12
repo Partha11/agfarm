@@ -7,17 +7,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.techmave.agfarm.R;
 import com.techmave.agfarm.databinding.FragmentHomeBinding;
-import com.techmave.agfarm.view.adapter.GridAdapter;
-import com.techmave.agfarm.view.model.CardItem;
+import com.techmave.agfarm.adapter.GridAdapter;
+import com.techmave.agfarm.model.CardItem;
 
 import java.util.ArrayList;
 import java.util.List;

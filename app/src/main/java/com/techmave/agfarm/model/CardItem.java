@@ -1,4 +1,4 @@
-package com.techmave.agfarm.view.model;
+package com.techmave.agfarm.model;
 
 public class CardItem {
 

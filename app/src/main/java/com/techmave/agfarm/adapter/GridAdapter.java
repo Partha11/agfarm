@@ -1,4 +1,4 @@
-package com.techmave.agfarm.view.adapter;
+package com.techmave.agfarm.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.techmave.agfarm.R;
 import com.techmave.agfarm.databinding.ModelCardBinding;
-import com.techmave.agfarm.view.model.CardItem;
+import com.techmave.agfarm.model.CardItem;
 
 import java.util.List;
 
