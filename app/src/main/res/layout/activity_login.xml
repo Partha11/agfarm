@@ -23,6 +23,30 @@
         android:orientation="horizontal"/>
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="eKrish"
+        android:textColor="@color/ocean_green"
+        android:textSize="@dimen/_26sdp"
+        android:fontFamily="@font/open_sans"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="i"
+        android:fontFamily="@font/plant_font"
+        android:textSize="@dimen/_31sdp"
+        android:textColor="@color/ocean_green"
+        app:layout_constraintTop_toTopOf="@id/app_title"
+        app:layout_constraintBottom_toBottomOf="@id/app_title"
+        app:layout_constraintStart_toEndOf="@id/app_title"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
