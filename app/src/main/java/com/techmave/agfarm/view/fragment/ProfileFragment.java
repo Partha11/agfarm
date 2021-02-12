@@ -53,10 +53,10 @@ public class ProfileFragment extends Fragment {
         adapter = new GridAdapter(requireContext());
         List<CardItem> items = new ArrayList<>();
 
-        items.add(new CardItem("ফসলের বিবরণ", R.drawable.ic_plant));
-        items.add(new CardItem("কি ফসল চাষ করবেন", R.drawable.ic_what));
-        items.add(new CardItem("সার ও বীজের হিসাব", R.drawable.ic_calculator));
-        items.add(new CardItem("লাভ ক্ষতির হিসাব", R.drawable.ic_profit));
+        items.add(new CardItem("বীজ বপনের তারিখ", R.drawable.ic_calendar));
+        items.add(new CardItem("সেচ দেওয়ার সময়", R.drawable.ic_watering_plants));
+        items.add(new CardItem("সার দেওয়ার সময়", R.drawable.ic_fertilizer));
+        items.add(new CardItem("ফসল কাটার সময়", R.drawable.ic_harvest));
 
         adapter.setItems(items);
 
