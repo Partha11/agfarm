@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.LoginActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <View
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="@dimen/_300sdp"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/view_login"
+        android:background="@drawable/view_login"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
