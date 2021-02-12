@@ -48,10 +48,10 @@ public class HomeFragment extends Fragment {
         adapter = new GridAdapter();
         List<CardItem> items = new ArrayList<>();
 
-        items.add(new CardItem("ফসলের বিবরণ", R.drawable.ic_calculator));
-        items.add(new CardItem("কি ফসল চাষ করবেন", 1));
-        items.add(new CardItem("সার ও বীজের হিসাব", 1));
-        items.add(new CardItem("লাভ ক্ষতির হিসাব", 1));
+        items.add(new CardItem("ফসলের বিবরণ", R.drawable.ic_plant ));
+        items.add(new CardItem("কি ফসল চাষ করবেন", R.drawable.ic_what));
+        items.add(new CardItem("সার ও বীজের হিসাব", R.drawable.ic_calculator));
+        items.add(new CardItem("লাভ ক্ষতির হিসাব", R.drawable.ic_profit));
 
         adapter.setItems(items);
 
