@@ -11,6 +11,7 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter;
 import com.techmave.agfarm.R;
 import com.techmave.agfarm.databinding.ActivityDashboardBinding;
 import com.techmave.agfarm.view.fragment.HomeFragment;
+import com.techmave.agfarm.view.fragment.ProfileFragment;
 import com.techmave.agfarm.view.fragment.WeatherFragment;
 
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class DashboardActivity extends AppCompatActivity implements AHBottomNavi
 
         fragments.add(HomeFragment.getInstance());
         fragments.add(WeatherFragment.getInstance());
-        fragments.add(HomeFragment.getInstance());
+        fragments.add(ProfileFragment.getInstance());
         fragments.add(HomeFragment.getInstance());
 
         binding.bottomNavigation.setOnTabSelectedListener(this);

@@ -1,9 +1,6 @@
 package com.techmave.agfarm.view.fragment;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,28 +8,36 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 import com.techmave.agfarm.R;
 import com.techmave.agfarm.adapter.GridAdapter;
-import com.techmave.agfarm.databinding.FragmentHomeBinding;
+import com.techmave.agfarm.databinding.FragmentProfileBinding;
 import com.techmave.agfarm.model.CardItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentProfileBinding binding;
     private GridAdapter adapter;
 
-    public static HomeFragment getInstance() {
+    public ProfileFragment() {
+        // Required empty public constructor
+    }
 
-        return new HomeFragment();
+    public static ProfileFragment getInstance() {
+
+        return new ProfileFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        binding = FragmentHomeBinding.inflate(inflater);
+        binding = FragmentProfileBinding.inflate(inflater);
         return binding.getRoot();
     }
 

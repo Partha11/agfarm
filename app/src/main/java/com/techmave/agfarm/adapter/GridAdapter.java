@@ -1,10 +1,13 @@
 package com.techmave.agfarm.adapter;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.techmave.agfarm.R;
@@ -16,6 +19,12 @@ import java.util.List;
 public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
     private List<CardItem> items;
+    private Context context;
+
+    public GridAdapter(Context context) {
+
+        this.context = context;
+    }
 
     @NonNull
     @Override
@@ -33,6 +42,9 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
         if (item != null) {
 
             holder.binding.cardTitle.setText(item.getName());
+
+            Drawable drawable = ResourcesCompat.getDrawable(context.getResources(), item.getIcon(), null);
+            holder.binding.cardThumb.setImageDrawable(drawable);
         }
     }
 
