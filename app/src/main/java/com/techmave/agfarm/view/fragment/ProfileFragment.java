@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -17,14 +18,14 @@ import com.techmave.agfarm.R;
 import com.techmave.agfarm.adapter.GridAdapter;
 import com.techmave.agfarm.databinding.FragmentProfileBinding;
 import com.techmave.agfarm.listener.FragmentInteractionListener;
-import com.techmave.agfarm.listener.OnCardClickedListener;
+import com.techmave.agfarm.listener.CardClickListener;
 import com.techmave.agfarm.model.CardItem;
 import com.techmave.agfarm.utility.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileFragment extends Fragment implements OnCardClickedListener {
+public class ProfileFragment extends Fragment implements CardClickListener {
 
     private FragmentProfileBinding binding;
     private GridAdapter adapter;
@@ -63,6 +64,8 @@ public class ProfileFragment extends Fragment implements OnCardClickedListener {
 
             listener = (FragmentInteractionListener) context;
         }
+
+        ((AppCompatActivity) getActivity()).setTitle("Profile");
     }
 
     private void initialize() {

@@ -1,6 +1,6 @@
 package com.techmave.agfarm.listener;
 
-public interface OnCardClickedListener {
+public interface CardClickListener {
 
     void onCardClicked(int position);
 }

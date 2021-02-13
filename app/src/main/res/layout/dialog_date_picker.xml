@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/_3sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="বীজ বপণের তারিখ"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/open_sans"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/crop_spinner"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/crop_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_outline_bg"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@id/dialog_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <DatePicker
+        android:id="@+id/date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:datePickerMode="spinner"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@id/crop_spinner"
+        android:calendarViewShown="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:text="Cancel"
+        android:textSize="@dimen/_10ssp"
+        android:fontFamily="@font/open_sans"
+        android:textAllCaps="false"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/date_picker"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/confirm_button"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:text="Confirm"
+        android:textSize="@dimen/_10ssp"
+        android:fontFamily="@font/open_sans"
+        android:textAllCaps="false"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/date_picker"
+        app:layout_constraintEnd_toStartOf="@id/cancel_button"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

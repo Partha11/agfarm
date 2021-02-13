@@ -1,5 +1,6 @@
 package com.techmave.agfarm.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,12 @@ import java.util.List;
 public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHolder> {
 
     private List<Daily> items;
+    private Context context;
+
+    public WeatherAdapter(Context context) {
+
+        this.context = context;
+    }
 
     @NonNull
     @Override
@@ -34,7 +41,9 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.ViewHold
         if (item != null) {
 
             holder.binding.dayName.setText(Utility.getDayStringFromTimestamp(item.getDt()));
-            holder.binding.temperatureText.setText(Utility.roundToTwoDecimalPoints(item.getTemp().getMax()));
+            holder.binding.pressureText.setText("Pressure: " + item.getPressure().toString());
+            holder.binding.humidityText.setText("Humidity: " + item.getHumidity().toString());
+            holder.binding.temperatureText.setText(context.getString(R.string.temperature_text_dynamic, Utility.roundToTwoDecimalPoints(item.getTemp().getMax())));
         }
     }
 

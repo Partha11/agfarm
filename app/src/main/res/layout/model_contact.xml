@@ -2,13 +2,14 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:foreground="?selectableItemBackground"
     app:cardCornerRadius="@dimen/_4sdp"
     android:layout_marginTop="@dimen/_3sdp"
     android:layout_marginBottom="@dimen/_3sdp"
-    android:layout_marginStart="@dimen/_8sdp"
-    android:layout_marginEnd="@dimen/_8sdp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_marginStart="@dimen/_6sdp"
+    android:layout_marginEnd="@dimen/_6sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,46 +17,50 @@
         android:padding="@dimen/_8sdp">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/day_name"
+            android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Sunday"
+            tools:text="Name"
             android:textSize="@dimen/_11ssp"
+            android:textColor="@android:color/black"
             android:fontFamily="@font/open_sans"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/pressure_text"
+            android:id="@+id/user_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Sunday"
+            tools:text="Number: 017xxxxxxxx"
             android:textSize="@dimen/_10ssp"
+            android:textColor="@android:color/black"
             android:fontFamily="@font/open_sans"
-            android:layout_marginTop="@dimen/_8sdp"
-            app:layout_constraintStart_toStartOf="@id/day_name"
-            app:layout_constraintTop_toBottomOf="@id/day_name"/>
+            android:layout_marginTop="@dimen/_6sdp"
+            app:layout_constraintTop_toBottomOf="@id/user_name"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/humidity_text"
+            android:id="@+id/user_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Sunday"
+            tools:text="Location: Noakhali"
             android:textSize="@dimen/_10ssp"
+            android:textColor="@android:color/black"
             android:fontFamily="@font/open_sans"
             android:layout_marginTop="@dimen/_3sdp"
-            app:layout_constraintStart_toStartOf="@id/pressure_text"
-            app:layout_constraintTop_toBottomOf="@id/pressure_text"/>
+            app:layout_constraintTop_toBottomOf="@id/user_number"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/temperature_text"
+            android:id="@+id/user_designation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="30"
-            android:textSize="@dimen/_11ssp"
+            tools:text="Designation: IOS"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/salmon"
             android:fontFamily="@font/open_sans"
-            app:layout_constraintTop_toTopOf="@id/day_name"
-            app:layout_constraintBottom_toBottomOf="@id/day_name"
+            app:layout_constraintTop_toTopOf="@id/user_name"
+            app:layout_constraintBottom_toBottomOf="@id/user_name"
             app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.techmave.agfarm.R;
 import com.techmave.agfarm.databinding.ModelCardBinding;
-import com.techmave.agfarm.listener.OnCardClickedListener;
+import com.techmave.agfarm.listener.CardClickListener;
 import com.techmave.agfarm.model.CardItem;
 
 import java.util.List;
@@ -21,9 +21,9 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
     private List<CardItem> items;
     private final Context context;
-    private final OnCardClickedListener listener;
+    private final CardClickListener listener;
 
-    public GridAdapter(Context context, OnCardClickedListener listener) {
+    public GridAdapter(Context context, CardClickListener listener) {
 
         this.context = context;
         this.listener = listener;
