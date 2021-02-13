@@ -1,5 +1,6 @@
 package com.techmave.agfarm.view.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,15 +15,20 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import com.techmave.agfarm.R;
 import com.techmave.agfarm.adapter.GridAdapter;
 import com.techmave.agfarm.databinding.FragmentHomeBinding;
+import com.techmave.agfarm.listener.FragmentInteractionListener;
+import com.techmave.agfarm.listener.OnCardClickedListener;
 import com.techmave.agfarm.model.CardItem;
+import com.techmave.agfarm.utility.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements OnCardClickedListener {
 
     private FragmentHomeBinding binding;
     private GridAdapter adapter;
+
+    private FragmentInteractionListener listener;
 
     public static HomeFragment getInstance() {
 
@@ -43,9 +49,20 @@ public class HomeFragment extends Fragment {
         initialize();
     }
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+
+        super.onAttach(context);
+
+        if (context instanceof FragmentInteractionListener) {
+
+            listener = (FragmentInteractionListener) context;
+        }
+    }
+
     private void initialize() {
 
-        adapter = new GridAdapter(requireContext());
+        adapter = new GridAdapter(requireContext(), this);
         List<CardItem> items = new ArrayList<>();
 
         items.add(new CardItem("ফসলের বিবরণ", R.drawable.ic_plant));
@@ -58,5 +75,14 @@ public class HomeFragment extends Fragment {
         binding.homeRecycler.setLayoutManager(new GridLayoutManager(getContext(), 2));
         binding.homeRecycler.setItemAnimator(new DefaultItemAnimator());
         binding.homeRecycler.setAdapter(adapter);
+    }
+
+    @Override
+    public void onCardClicked(int position) {
+
+        if (listener != null) {
+
+            listener.onCardClicked(Constants.FRAGMENT_HOME, position);
+        }
     }
 }

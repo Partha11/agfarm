@@ -16,4 +16,7 @@
     <string name="humidity">Humidity</string>
     <string name="pressure">Pressure</string>
     <string name="ekrish">eKrish</string>
+    <string name="please_select_a_crop">Please select a crop!</string>
+    <string name="fertilizer_amount">সারের পরিমাণ (কেজি):</string>
+    <string name="seed_amount">বীজের পরিমাণ (কেজি):</string>
 </resources>

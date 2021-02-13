@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.techmave.agfarm.R;
 import com.techmave.agfarm.databinding.ModelCardBinding;
+import com.techmave.agfarm.listener.OnCardClickedListener;
 import com.techmave.agfarm.model.CardItem;
 
 import java.util.List;
@@ -19,11 +20,13 @@ import java.util.List;
 public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
     private List<CardItem> items;
-    private Context context;
+    private final Context context;
+    private final OnCardClickedListener listener;
 
-    public GridAdapter(Context context) {
+    public GridAdapter(Context context, OnCardClickedListener listener) {
 
         this.context = context;
+        this.listener = listener;
     }
 
     @NonNull
@@ -59,14 +62,25 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
         this.items = items;
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ModelCardBinding binding;
 
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
+
             binding = ModelCardBinding.bind(itemView);
+            binding.getRoot().setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+
+            if (listener != null) {
+
+                listener.onCardClicked(getAdapterPosition());
+            }
         }
     }
 }

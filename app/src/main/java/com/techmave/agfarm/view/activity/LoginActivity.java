@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.techmave.agfarm.databinding.ActivityLoginBinding;
+import com.techmave.agfarm.utility.SharedPrefs;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,12 +24,25 @@ public class LoginActivity extends AppCompatActivity {
 
     private void initialize() {
 
+        SharedPrefs prefs = new SharedPrefs(this);
+
+        if (prefs.isLoggedIn()) {
+
+            switchActivity();
+        }
+
         binding.buttonSignIn.setOnClickListener(v -> {
 
-            Intent intent = new Intent(this, DashboardActivity.class);
-
-            startActivity(intent);
-            finishAffinity();
+            prefs.setLoggedIn(true);
+            switchActivity();
         });
+    }
+
+    private void switchActivity() {
+
+        Intent intent = new Intent(this, DashboardActivity.class);
+
+        startActivity(intent);
+        finishAffinity();
     }
 }
